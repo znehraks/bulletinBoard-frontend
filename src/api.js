@@ -1,6 +1,6 @@
 import axios from "axios";
 const api = axios.create({
-  baseURL: "http://bulletinboard-backend.herokuapp.com/",
+  baseURL: "https://bulletinboard-backend.herokuapp.com/",
 });
 
 export const Api = {
