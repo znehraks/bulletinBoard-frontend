@@ -10,7 +10,7 @@ import {
 } from "../../styles/styledComponents";
 import { MAIN } from "../Enum";
 import PropTypes from "prop-types";
-import isLoggedInContext from "../Context";
+import { isLoggedInContext } from "../Context";
 
 export const CreateMode = ({
   titleInput,

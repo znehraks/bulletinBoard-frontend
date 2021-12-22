@@ -3,7 +3,7 @@ import useInput from "../../components/hooks/useInput";
 import { Api } from "../../api";
 import { LOGIN, MAIN } from "../../components/screenComponents/Enum";
 import { HomePresenter } from "./HomePresenter";
-import isLoggedInContext from "../../components/screenComponents/Context";
+import { isLoggedInContext } from "../../components/screenComponents/Context";
 
 const HomeContainer = () => {
   const [current, setCurrent] = useState({

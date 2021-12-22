@@ -10,7 +10,6 @@ import { SignupMode } from "./mode/SignupMode";
 import PropTypes from "prop-types";
 export const RightContainer = ({
   data,
-  me,
   page,
   setPage,
   setCurrent,
@@ -111,7 +110,6 @@ export const RightContainer = ({
 
 RightContainer.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  me: PropTypes.object.isRequired,
   page: PropTypes.number.isRequired,
   setPage: PropTypes.func.isRequired,
   setCurrent: PropTypes.func.isRequired,

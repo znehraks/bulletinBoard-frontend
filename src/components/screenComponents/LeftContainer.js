@@ -1,42 +1,14 @@
 import React from "react";
-import styled from "styled-components";
 import MyProfile_img from "../styles/images/myprofile.png";
 import MyPost_img from "../styles/images/pencil.png";
 import { LOGIN, PROFILE } from "./Enum";
 import PropTypes from "prop-types";
+import {
+  ButtonImg,
+  MainLeftButton,
+  MainLeftContainer,
+} from "../styles/styledComponents";
 
-const MainLeftContainer = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background: ${(props) => props.theme.ContainerColor};
-  margin: 0 0.2vw;
-  height: 100%;
-`;
-
-const MainLeftButton = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 1.2vw;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  margin: 2.5vw 0;
-  padding: 0.6vw;
-  cursor: pointer;
-  :nth-child(2) {
-    margin: 0;
-  }
-  :hover {
-    background: ${(props) => props.theme.lightHeaderColor};
-    color: #fff;
-  }
-`;
-const ButtonImg = styled.img`
-  width: 2vw;
-`;
 export const LeftContainer = ({
   mode,
   isLoggedIn,

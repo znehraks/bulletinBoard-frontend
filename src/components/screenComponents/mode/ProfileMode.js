@@ -14,7 +14,7 @@ import { DETAIL, MAIN } from "../Enum";
 import { ProfileBoardTable } from "../ProfileBoardTable";
 import Profile_img from "../../styles/images/logo.jpg";
 import PropTypes from "prop-types";
-import isLoggedInContext from "../Context";
+import { isLoggedInContext } from "../Context";
 export const ProfileMode = ({
   userData,
   setCurrent,

@@ -1,4 +1,4 @@
 const { createContext } = require("react");
 
-const isLoggedInContext = createContext();
-export default isLoggedInContext;
+export const isLoggedInContext = createContext();
+export const themeContext = createContext();

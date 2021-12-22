@@ -12,7 +12,7 @@ import {
 import { BoardTable } from "../BoardTable";
 import { CREATE, DETAIL } from "../Enum";
 import PropTypes from "prop-types";
-import isLoggedInContext from "../Context";
+import { isLoggedInContext } from "../Context";
 
 export const MainMode = ({
   isLoggedIn,

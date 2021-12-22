@@ -12,11 +12,12 @@ export const Nav = styled.div`
   height: 10%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   background: ${(props) => props.theme.headerColor};
   font-size: 1.1vw;
   font-weight: 600;
+  padding: 0 7vw 0 15vw;
   :first-child {
     flex: 3;
   }
@@ -25,12 +26,13 @@ export const Nav = styled.div`
   }
 `;
 export const Menu = styled.div`
+  flex: ${(props) => props.flex};
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-weight: 600;
-  color: white;
+  color: ${(props) => props.theme.headerFontColor};
 `;
 export const LogoutBox = styled.div`
   display: flex;
@@ -38,7 +40,10 @@ export const LogoutBox = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const AuthButton = styled.span`
+export const MenuButton = styled.span`
+  :hover {
+    color: ${(props) => props.theme.hoverHeaderFontColor};
+  }
   cursor: pointer;
 `;
 export const ProfileImg = styled.img`
@@ -59,7 +64,7 @@ export const MainContainer = styled.div`
   align-items: center;
   height: 80%;
   width: 100%;
-  background: ${(props) => props.theme.lightHeaderColor};
+  background: ${(props) => props.theme.bgColor};
   position: relative;
 `;
 export const MainLeftContainer = styled.div`
@@ -71,6 +76,7 @@ export const MainLeftContainer = styled.div`
   background: ${(props) => props.theme.ContainerColor};
   margin: 0 0.2vw;
   height: 100%;
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const MainLeftButton = styled.div`
@@ -79,7 +85,7 @@ export const MainLeftButton = styled.div`
   justify-content: space-around;
   align-items: center;
   font-size: 1.2vw;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid ${(props) => props.theme.borderColor};
   margin: 2.5vw 0;
   padding: 0.6vw;
   cursor: pointer;
@@ -88,7 +94,7 @@ export const MainLeftButton = styled.div`
   }
   :hover {
     background: ${(props) => props.theme.lightHeaderColor};
-    color: #fff;
+    color: ${(props) => props.theme.hoverFontColor};
   }
 `;
 export const ButtonImg = styled.img`
@@ -109,6 +115,7 @@ export const MainRightContainerTitle = styled.span`
   height: 10%;
   text-align: center;
   font-size: 1.8vw;
+  color: ${(props) => props.theme.fontColor};
 `;
 export const BoardWrapper = styled.div`
   width: 80%;
@@ -125,15 +132,25 @@ export const BoardRow = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  color: ${(props) => props.theme.fontColor};
+  background-color: ${(props) => props.theme.ContainerColor};
   cursor: ${(props) => (props.isTitle ? "inherit" : "pointer")};
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 1px solid ${(props) => props.theme.borderColor};
+
   :last-child {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid ${(props) => props.theme.borderColor};
   }
   :hover {
     background-color: ${(props) =>
-      props.isTitle ? "inherit" : props.theme.lightHeaderColor};
-    color: ${(props) => (props.isTitle ? "inherit" : "#fff")};
+      props.isTitle ? "inherit" : props.theme.headerColor};
+    border: ${(props) =>
+      props.isTitle
+        ? `1px solid inherit`
+        : `1px solid ${props.theme.lightHeaderColor}`};
+    div {
+      color: ${(props) =>
+        props.isTitle ? "inherit" : props.theme.hoverFontColor};
+    }
   }
 `;
 export const BoardCell = styled.div`
@@ -145,9 +162,11 @@ export const BoardCell = styled.div`
   justify-content: center;
   font-size: 1.2vw;
   font-weight: 600;
-  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  color: ${(props) => props.theme.fontColor};
+  border-right: 1px solid ${(props) => props.theme.borderColor};
+
   :first-child {
-    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    border-left: 1px solid ${(props) => props.theme.borderColor};
     flex: 1;
   }
   :nth-child(2) {
@@ -164,39 +183,45 @@ export const CurrentTitleContainer = styled.div`
   width: 80%;
   height: 10%;
   font-size: 1.2vw;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid ${(props) => props.theme.borderColor};
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.whiteBgColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 export const CurrentTitleContainerEdit = styled.input`
   width: 80%;
   height: 10%;
   font-size: 1.2vw;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid ${(props) => props.theme.borderColor};
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  background-color: ${(props) => props.theme.whiteBgColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 export const CurrentContentContainer = styled.div`
   width: 80%;
   height: 70%;
   font-size: 0.9vw;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid ${(props) => props.theme.borderColor};
   border-top: none;
   display: flex;
   align-items: flex-start;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.whiteBgColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 export const CurrentContentContainerEdit = styled.textarea`
   width: 80%;
   height: 70%;
   font-size: 1vw;
   resize: none;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid ${(props) => props.theme.borderColor};
   border-top: none;
   display: flex;
   align-items: flex-start;
+  background-color: ${(props) => props.theme.whiteBgColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 export const ButtonBox = styled.div`
   display: flex;
@@ -206,23 +231,24 @@ export const ButtonBox = styled.div`
 `;
 export const ButtonContainer = styled.div`
   font-size: 1.2vw;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid ${(props) => props.theme.borderColor};
   padding: 0.4vw;
   margin: ${(props) => (props.margin ? props.margin : "1vw 1vw 0 1vw")};
   background-color: inherit;
-  color: #000;
+
+  color: ${(props) => props.theme.fontColor};
   cursor: pointer;
   :hover {
     background-color: ${(props) =>
       props.bgColor ? props.bgColor : props.theme.lightHeaderColor};
-    color: #fff;
+    color: ${(props) => props.theme.hoverFontColor};
   }
 `;
 
 export const ProfileContainer = styled.div`
   width: 100%;
   height: 80%;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.whiteBgColor};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -250,7 +276,7 @@ export const ProfileLeftContainer = styled.div`
 export const ProfileRightContainer = styled.div`
   flex: 5;
   height: 95%;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.whiteBgColor};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -261,7 +287,7 @@ export const ProfileRightContainer = styled.div`
 
 export const ProfileRightContainerSpan = styled.div`
   font-size: 1.2vw;
-  color: white;
+  color: ${(props) => props.theme.headerFontColor};
 `;
 
 export const EmptyContainer = styled.div`
@@ -291,14 +317,14 @@ export const AddPostButton = styled.div`
   align-items: center;
   justify-content: center;
   right: 4vw;
-  color: #000;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: ${(props) => props.theme.fontColor};
+  border: 1px solid ${(props) => props.theme.borderColor};
   background-color: inherit;
-  color: black;
+  color: ${(props) => props.theme.fontColor};
   padding-bottom: 0.4vw;
   :hover {
     background-color: ${(props) => props.theme.lightHeaderColor};
-    color: #fff;
+    color: ${(props) => props.theme.hoverFontColor};
   }
   cursor: pointer;
 `;
@@ -315,11 +341,11 @@ export const GoToBackButton = styled.div`
   align-items: center;
   justify-content: center;
   right: 7vw;
-  color: #000;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: ${(props) => props.theme.fontColor};
+  border: 1px solid ${(props) => props.theme.borderColor};
   :hover {
     background-color: ${(props) => props.theme.lightHeaderColor};
-    color: #fff;
+    color: ${(props) => props.theme.hoverFontColor};
   }
   cursor: pointer;
 `;
@@ -331,7 +357,7 @@ export const PageSpan = styled.span`
 export const AuthContainer = styled.div`
   width: 80%;
   height: 70%;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.whiteBgColor};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -355,11 +381,14 @@ export const AuthInputTitle = styled.div`
   flex: 1;
   height: 100%;
   font-size: 1.2vw;
+  color: ${(props) => props.theme.fontColor};
 `;
 export const AuthInput = styled.input`
   flex: 3;
   height: 100%;
   font-size: 1.2vw;
+  background: ${(props) => props.theme.ContainerColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const Footer = styled.div`
@@ -370,6 +399,7 @@ export const Footer = styled.div`
   width: 100%;
   height: 10%;
   background: ${(props) => props.theme.lightHeaderColor};
+  color: ${(props) => props.theme.fontColor};
 `;
 export const FooterLeft = styled.div`
   flex: 1;
@@ -391,4 +421,39 @@ export const FooterRight = styled.div`
   background: #555;
   height: 100%;
   background: ${(props) => props.theme.headerColor};
+`;
+
+export const PopupOverlay = styled.div`
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0.3;
+  display: ${(props) => (props.display ? "block" : "none")};
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+`;
+export const PopupWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: ${(props) => (props.display ? "block" : "none")};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`;
+
+export const PopupMessageBox = styled.div`
+  width: 30%;
+  height: 20%;
+  background-color: ${(props) => props.theme.whiteBgColor};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 0.4vw;
+  font-size: 1.2vw;
+  color: ${(props) => props.theme.fontColor};
 `;

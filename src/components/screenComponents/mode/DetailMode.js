@@ -7,45 +7,12 @@ import {
   ButtonBox,
   ButtonContainer,
   GoToBackButton,
+  PopupOverlay,
+  PopupWrapper,
+  PopupMessageBox,
 } from "../../styles/styledComponents";
 import { EDIT } from "../Enum";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-
-const PopupOverlay = styled.div`
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 0.3;
-  display: ${(props) => (props.display ? "block" : "none")};
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
-`;
-const PopupWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  display: ${(props) => (props.display ? "block" : "none")};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-`;
-
-const PopupMessageBox = styled.div`
-  width: 30%;
-  height: 20%;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding-top: 0.4vw;
-  font-size: 1.2vw;
-  color: #000;
-`;
 
 export const DetailMode = ({
   setCurrent,

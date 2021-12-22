@@ -83,7 +83,11 @@ export const ProfileBoardTable = ({
               key={row.board_code}
             >
               <BoardCell>{row.board_code}</BoardCell>
-              <BoardCell>{row.board_title}</BoardCell>
+              <BoardCell>
+                {row.board_title.length > 10
+                  ? `${row.board_title.slice(0, 10)}...`
+                  : `${row.board_title}`}
+              </BoardCell>
               <BoardCell>{row.board_author}</BoardCell>
               <BoardCell>{row.created_at.split("T")[0]}</BoardCell>
             </BoardRow>
