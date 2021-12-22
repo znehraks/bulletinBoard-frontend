@@ -4,6 +4,7 @@ import { Footer } from "../../components/screenComponents/Footer";
 import { Header } from "../../components/screenComponents/Header";
 import { LeftContainer } from "../../components/screenComponents/LeftContainer";
 import { RightContainer } from "../../components/screenComponents/RightContainer";
+import Helmet from "react-helmet";
 
 const Wrapper = styled.div`
   display: flex;
@@ -59,6 +60,9 @@ export const HomePresenter = ({
 }) => {
   return (
     <Wrapper>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <Header setMode={setMode} />
       <MainContainer>
         <LeftContainer

@@ -1,6 +1,6 @@
 import axios from "axios";
 const api = axios.create({
-  baseURL: "http://localhost:4000/",
+  baseURL: "http://bulletinboard-backend.herokuapp.com/",
 });
 
 export const Api = {
@@ -41,7 +41,7 @@ export const Api = {
   login: (user_id, user_password) =>
     api.post(`/user/login`, { user_id, user_password }),
   getMe: () =>
-    api.get(`/me`, {
+    api.get(`/user/me`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     }),
 };

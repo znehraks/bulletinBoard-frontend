@@ -21,3 +21,5 @@
 ##### (node:6132) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 exit listeners added to [Bus]. Use emitter.setMaxListeners() to increase limit 에러 발견
 
 #### 배포하기
+
+#### Helmet, favicon 추가, awsRDS 구축 및 연동
