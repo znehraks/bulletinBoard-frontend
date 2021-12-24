@@ -33,7 +33,6 @@ export const ProfileMode = ({
         <ProfileContainer>
           <ProfileLeftContainer>
             <Profile src={Profile_img} />
-            <ProfileRightContainerSpan></ProfileRightContainerSpan>
             <ProfileRightContainerSpan>
               {userData[0].user_name}({userData[0].user_id})
             </ProfileRightContainerSpan>

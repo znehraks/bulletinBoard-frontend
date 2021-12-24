@@ -112,7 +112,7 @@ export const MenuButton = styled.span`
   }
   cursor: pointer;
   @media (max-width: 550px) {
-    font-size: 0.2vw;
+    font-size: 3vw;
   }
 `;
 export const ProfileImg = styled.img`
@@ -197,7 +197,7 @@ export const MainRightContainerTitle = styled.span`
   color: ${(props) => props.theme.fontColor};
   @media (max-width: 550px) {
     margin-top: 5vw;
-    font-size: 5vw;
+    font-size: 4vw;
   }
 `;
 export const BoardWrapper = styled.div`
@@ -314,6 +314,7 @@ export const ProfileBoardCell = styled.div`
     flex: 2;
   }
   @media (max-width: 550px) {
+    font-size: 2vw;
     height: 10vw;
   }
 `;
@@ -446,7 +447,6 @@ export const ProfileLeftContainer = styled.div`
   padding-top: 3vw;
   font-size: 3vw;
   @media (max-width: 550px) {
-    font-size: 3vw;
     justify-content: center;
   }
 `;
@@ -465,6 +465,10 @@ export const ProfileRightContainer = styled.div`
 export const ProfileRightContainerSpan = styled.div`
   font-size: 1.2vw;
   color: ${(props) => props.theme.headerFontColor};
+  @media (max-width: 550px) {
+    font-size: 3vw;
+    justify-content: center;
+  }
 `;
 
 export const WordCount = styled.span`
@@ -507,7 +511,7 @@ export const AddPostButton = styled.div`
     height: 10vw;
     top: 5vw;
     font-size: 8vw;
-    padding-bottom: 2%;
+    padding-bottom: 10px;
   }
 `;
 
@@ -533,9 +537,9 @@ export const GoToBackButton = styled.div`
   @media (max-width: 550px) {
     top: 15vw;
     right: 2vw;
-    width: 15vw;
-    height: 15vw;
-    font-size: 1vw;
+    width: 10vw;
+    height: 10vw;
+    font-size: 3vw;
   }
 `;
 export const PageSpan = styled.span`
@@ -579,7 +583,7 @@ export const AuthInputTitle = styled.div`
   font-size: 1.2vw;
   color: ${(props) => props.theme.fontColor};
   @media (max-width: 550px) {
-    font-size: 3.2vw;
+    font-size: 3vw;
   }
 `;
 export const AuthInput = styled.input`
