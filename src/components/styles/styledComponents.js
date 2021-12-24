@@ -1,5 +1,37 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
+export const Animation = keyframes`
+    0% {
+        opacity:0
+    }
+    50%{
+        opacity:1
+    }
+    100%{
+        opacity:0;
+    }
+`;
+
+export const LoaderComponent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: ${(props) => props.theme.ContainerColor};
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 999;
+  span {
+    font-size: 1vw;
+    animation: ${Animation} 1.3s linear infinite;
+    :first-child {
+      font-size: 2vw;
+    }
+  }
+`;
+
+export const Span = styled.span``;
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,6 +56,10 @@ export const Nav = styled.div`
   :not(:first-child) {
     flex: 1;
   }
+  @media (max-width: 550px) {
+    padding: 0 1vw;
+    justify-content: center;
+  }
 `;
 export const Menu = styled.div`
   flex: ${(props) => props.flex};
@@ -33,18 +69,41 @@ export const Menu = styled.div`
   align-items: center;
   font-weight: 600;
   color: ${(props) => props.theme.headerFontColor};
+  @media (max-width: 550px) {
+    :nth-child(2) {
+      flex: 3;
+      justify-content: flex-end;
+    }
+    :nth-child(3) {
+      flex: 3;
+    }
+    justify-content: center;
+  }
 `;
 export const LogoutBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  @media (max-width: 550px) {
+    span {
+      display: none;
+    }
+    img {
+      width: 10vw;
+      height: 10vw;
+    }
+    justify-content: center;
+  }
 `;
 export const MenuButton = styled.span`
   :hover {
     color: ${(props) => props.theme.hoverHeaderFontColor};
   }
   cursor: pointer;
+  @media (max-width: 550px) {
+    font-size: 0.2vw;
+  }
 `;
 export const ProfileImg = styled.img`
   width: 3vw;
@@ -56,6 +115,9 @@ export const ProfileImg = styled.img`
 export const LogoImg = styled.img`
   width: 10vw;
   cursor: pointer;
+  @media (max-width: 550px) {
+    width: 22vw;
+  }
 `;
 export const MainContainer = styled.div`
   display: flex;
@@ -66,6 +128,9 @@ export const MainContainer = styled.div`
   width: 100%;
   background: ${(props) => props.theme.bgColor};
   position: relative;
+  @media (max-width: 550px) {
+    height: 85%;
+  }
 `;
 export const MainLeftContainer = styled.div`
   flex: 1;
@@ -77,6 +142,9 @@ export const MainLeftContainer = styled.div`
   margin: 0 0.2vw;
   height: 100%;
   color: ${(props) => props.theme.fontColor};
+  @media (max-width: 550px) {
+    display: none;
+  }
 `;
 
 export const MainLeftButton = styled.div`
@@ -116,6 +184,10 @@ export const MainRightContainerTitle = styled.span`
   text-align: center;
   font-size: 1.8vw;
   color: ${(props) => props.theme.fontColor};
+  @media (max-width: 550px) {
+    font-size: 7vw;
+    margin-top: 2vw;
+  }
 `;
 export const BoardWrapper = styled.div`
   width: 80%;
@@ -124,6 +196,11 @@ export const BoardWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: 550px) {
+    width: 95%;
+    height: 85%;
+    justify-content: center;
+  }
 `;
 export const BoardRow = styled.div`
   width: 95%;
@@ -152,10 +229,12 @@ export const BoardRow = styled.div`
         props.isTitle ? "inherit" : props.theme.hoverFontColor};
     }
   }
+  @media (max-width: 550px) {
+  }
 `;
 export const BoardCell = styled.div`
   width: 100%;
-  height: 3vw;
+  height: 100%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -177,6 +256,9 @@ export const BoardCell = styled.div`
   }
   :last-child {
     flex: 2;
+  }
+  @media (max-width: 550px) {
+    font-size: 3vw;
   }
 `;
 export const CurrentTitleContainer = styled.div`
@@ -228,6 +310,9 @@ export const ButtonBox = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  @media (max-width: 550px) {
+    margin-top: 2vw;
+  }
 `;
 export const ButtonContainer = styled.div`
   font-size: 1.2vw;
@@ -242,6 +327,9 @@ export const ButtonContainer = styled.div`
     background-color: ${(props) =>
       props.bgColor ? props.bgColor : props.theme.lightHeaderColor};
     color: ${(props) => props.theme.hoverFontColor};
+  }
+  @media (max-width: 550px) {
+    font-size: 4vw;
   }
 `;
 
@@ -348,10 +436,21 @@ export const GoToBackButton = styled.div`
     color: ${(props) => props.theme.hoverFontColor};
   }
   cursor: pointer;
+  @media (max-width: 550px) {
+    top: 15vw;
+    right: 2vw;
+    width: 15vw;
+    height: 15vw;
+    font-size: 1vw;
+  }
 `;
 export const PageSpan = styled.span`
   font-size: 1.2vw;
   margin-bottom: 1vw;
+  @media (max-width: 550px) {
+    font-size: 5vw;
+    margin: 2vw 4vw 4vw 4vw;
+  }
 `;
 
 export const AuthContainer = styled.div`
@@ -373,6 +472,9 @@ export const AuthInputContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 2vw;
+  @media (max-width: 550px) {
+    width: 70%;
+  }
 `;
 export const AuthInputTitle = styled.div`
   display: flex;
@@ -389,9 +491,12 @@ export const AuthInput = styled.input`
   font-size: 1.2vw;
   background: ${(props) => props.theme.ContainerColor};
   color: ${(props) => props.theme.fontColor};
+  @media (max-width: 550px) {
+    font-size: 3.2vw;
+  }
 `;
 
-export const Footer = styled.div`
+export const FooterWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -399,7 +504,11 @@ export const Footer = styled.div`
   width: 100%;
   height: 10%;
   background: ${(props) => props.theme.lightHeaderColor};
-  color: ${(props) => props.theme.fontColor};
+  color: #fff;
+  @media (max-width: 550px) {
+    font-size: 1.2vw;
+    height: 5%;
+  }
 `;
 export const FooterLeft = styled.div`
   flex: 1;
@@ -411,6 +520,9 @@ export const FooterLeft = styled.div`
   margin: 0 0.2vw;
   height: 100%;
   background: ${(props) => props.theme.headerColor};
+  @media (max-width: 550px) {
+    font-size: 1vw;
+  }
 `;
 export const FooterRight = styled.div`
   flex: 6;
@@ -421,6 +533,9 @@ export const FooterRight = styled.div`
   background: #555;
   height: 100%;
   background: ${(props) => props.theme.headerColor};
+  @media (max-width: 550px) {
+    font-size: 1.2vw;
+  }
 `;
 
 export const PopupOverlay = styled.div`
@@ -456,4 +571,9 @@ export const PopupMessageBox = styled.div`
   padding-top: 0.4vw;
   font-size: 1.2vw;
   color: ${(props) => props.theme.fontColor};
+  @media (max-width: 550px) {
+    width: 60%;
+    height: 20%;
+    font-size: 3vw;
+  }
 `;

@@ -1,6 +1,7 @@
 import axios from "axios";
 const api = axios.create({
   baseURL: "https://bulletinboard-backend.herokuapp.com/",
+  // baseURL: "http://00b3-222-235-17-212.ngrok.io/",
 });
 
 export const Api = {

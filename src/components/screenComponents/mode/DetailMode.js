@@ -79,7 +79,7 @@ export const DetailMode = ({
                 </ButtonContainer>
                 <ButtonContainer
                   onClick={() => {
-                    setDisplay("block");
+                    setDisplay(true);
                   }}
                 >
                   삭제하기

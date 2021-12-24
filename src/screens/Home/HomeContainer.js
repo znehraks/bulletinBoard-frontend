@@ -17,6 +17,7 @@ const HomeContainer = () => {
   });
   const { isLoggedIn, setIsLoggedIn, me, setMe } =
     useContext(isLoggedInContext);
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [prevMode, setPrevMode] = useState(MAIN);
   const [mode, setMode] = useState(MAIN);
@@ -35,15 +36,12 @@ const HomeContainer = () => {
   if (contentInput.value.length >= 1001) {
     contentInput.setValue(contentInput.value.slice(0, 1000));
   }
-  //onClick 함수 정리
-  //UI 어색한 부분 수정
-  //컴포넌트 분리
-  //디자인패턴 적용
 
   const getAllFunc = async () => {
     await Api.getAll()
       .then((res) => {
         setData(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -170,6 +168,7 @@ const HomeContainer = () => {
 
   return (
     <HomePresenter
+      loading={loading}
       isLoggedIn={isLoggedIn}
       current={current}
       setCurrent={setCurrent}

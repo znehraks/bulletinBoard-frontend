@@ -9,8 +9,9 @@ import {
   MainRightContainer,
   Wrapper,
 } from "../../components/styles/styledComponents";
-
+import Loader from "../../components/screenComponents/Loader";
 export const HomePresenter = ({
+  loading,
   isLoggedIn,
   current,
   setCurrent,
@@ -40,7 +41,7 @@ export const HomePresenter = ({
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <Header setMode={setMode} />
+      <Header setMode={setMode} getUserFunc={getUserFunc} />
       <MainContainer>
         <LeftContainer
           mode={mode}
@@ -50,31 +51,38 @@ export const HomePresenter = ({
           getUserFunc={getUserFunc}
         />
         <MainRightContainer>
-          {/*Props 지옥 */}
-          <RightContainer
-            data={data}
-            me={me}
-            page={page}
-            setPage={setPage}
-            mode={mode}
-            setCurrent={setCurrent}
-            setMode={setMode}
-            current={current}
-            isLoggedIn={isLoggedIn}
-            deleteFunc={deleteFunc}
-            prevMode={prevMode}
-            editFunc={editFunc}
-            createFunc={createFunc}
-            userData={userData}
-            setPrevMode={setPrevMode}
-            nameInput={nameInput}
-            idInput={idInput}
-            passwordInput={passwordInput}
-            signupFunc={signupFunc}
-            loginFunc={loginFunc}
-            titleInput={titleInput}
-            contentInput={contentInput}
-          />
+          {loading ? (
+            <Loader>
+              <Helmet>
+                <title>Loading</title>
+              </Helmet>
+            </Loader>
+          ) : (
+            <RightContainer
+              data={data}
+              me={me}
+              page={page}
+              setPage={setPage}
+              mode={mode}
+              setCurrent={setCurrent}
+              setMode={setMode}
+              current={current}
+              isLoggedIn={isLoggedIn}
+              deleteFunc={deleteFunc}
+              prevMode={prevMode}
+              editFunc={editFunc}
+              createFunc={createFunc}
+              userData={userData}
+              setPrevMode={setPrevMode}
+              nameInput={nameInput}
+              idInput={idInput}
+              passwordInput={passwordInput}
+              signupFunc={signupFunc}
+              loginFunc={loginFunc}
+              titleInput={titleInput}
+              contentInput={contentInput}
+            />
+          )}
         </MainRightContainer>
       </MainContainer>
       <Footer />

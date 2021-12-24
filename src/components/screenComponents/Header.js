@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Logo_img from "../styles/images/DesignC_logo_03_white.png";
 import Profile_img from "../styles/images/logo.jpg";
-import { LOGIN, MAIN } from "./Enum";
+import { LOGIN, MAIN, PROFILE } from "./Enum";
 import PropTypes from "prop-types";
 import { isLoggedInContext, themeContext } from "./Context";
 import {
@@ -13,7 +13,7 @@ import {
   ProfileImg,
 } from "../styles/styledComponents";
 
-export const Header = ({ setMode }) => {
+export const Header = ({ setMode, getUserFunc }) => {
   const { isLoggedIn, setIsLoggedIn } = useContext(isLoggedInContext);
   const { isDarkMode, setIsDarkMode } = useContext(themeContext);
   return (
@@ -26,7 +26,14 @@ export const Header = ({ setMode }) => {
           <MenuButton onClick={() => setMode(LOGIN)}>로그인하기</MenuButton>
         ) : (
           <LogoutBox>
-            <ProfileImg src={Profile_img} alt={"프로필이미지"} />
+            <ProfileImg
+              onClick={() => {
+                getUserFunc();
+                setMode(PROFILE);
+              }}
+              src={Profile_img}
+              alt={"프로필이미지"}
+            />
             <MenuButton
               onClick={() => {
                 localStorage.removeItem("token");
