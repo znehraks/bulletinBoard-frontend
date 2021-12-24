@@ -53,8 +53,13 @@ export const EditMode = ({
           {...contentInput}
           onKeyPress={(e) => {
             if (e.key === "Enter") {
-              editFunc(current.code, titleInput.value, contentInput.value);
-              setMode(MAIN);
+              editFunc(
+                current.code,
+                titleInput.value,
+                contentInput.value,
+                titleRef,
+                contentRef
+              );
             }
           }}
         />
@@ -70,8 +75,13 @@ export const EditMode = ({
           <ButtonContainer
             type={"complete"}
             onClick={() => {
-              editFunc(current.code, titleInput.value, contentInput.value);
-              setMode(MAIN);
+              editFunc(
+                current.code,
+                titleInput.value,
+                contentInput.value,
+                titleRef,
+                contentRef
+              );
             }}
           >
             수정완료

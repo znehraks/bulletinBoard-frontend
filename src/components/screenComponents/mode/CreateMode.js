@@ -59,10 +59,10 @@ export const CreateMode = ({
                 me.code,
                 me.user_id,
                 titleInput.value,
-                contentInput.value
+                contentInput.value,
+                titleRef,
+                contentRef
               );
-              setPage(1);
-              setMode(MAIN);
             }
           }}
         />
@@ -81,10 +81,10 @@ export const CreateMode = ({
                 me.code,
                 me.user_id,
                 titleInput.value,
-                contentInput.value
+                contentInput.value,
+                titleRef,
+                contentRef
               );
-              setPage(1);
-              setMode(MAIN);
             }}
           >
             완료하기

@@ -41,7 +41,7 @@ export const LoginMode = ({ idInput, passwordInput, loginFunc, setMode }) => {
           {...passwordInput}
           onKeyPress={(e) => {
             if (e.key === "Enter") {
-              loginFunc(idInput.value, passwordInput.value);
+              loginFunc(idInput.value, passwordInput.value, idRef, passwordRef);
             }
           }}
         />
@@ -49,7 +49,7 @@ export const LoginMode = ({ idInput, passwordInput, loginFunc, setMode }) => {
       <ButtonBox>
         <ButtonContainer
           onClick={() => {
-            loginFunc(idInput.value, passwordInput.value);
+            loginFunc(idInput.value, passwordInput.value, idRef, passwordRef);
           }}
         >
           로그인

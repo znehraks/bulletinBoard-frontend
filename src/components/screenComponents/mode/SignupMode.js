@@ -61,7 +61,14 @@ export const SignupMode = ({
           {...passwordInput}
           onKeyPress={(e) => {
             if (e.key === "Enter") {
-              signupFunc(nameInput.value, idInput.value, passwordInput.value);
+              signupFunc(
+                nameInput.value,
+                idInput.value,
+                passwordInput.value,
+                nameRef,
+                idRef,
+                passwordRef
+              );
             }
           }}
         />
@@ -69,10 +76,17 @@ export const SignupMode = ({
       <ButtonBox>
         <ButtonContainer
           onClick={() => {
-            signupFunc(nameInput.value, idInput.value, passwordInput.value);
+            signupFunc(
+              nameInput.value,
+              idInput.value,
+              passwordInput.value,
+              nameRef,
+              idRef,
+              passwordRef
+            );
           }}
         >
-          완료
+          작성완료
         </ButtonContainer>
         <ButtonContainer
           onClick={() => {
