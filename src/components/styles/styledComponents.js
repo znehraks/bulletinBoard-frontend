@@ -29,6 +29,15 @@ export const LoaderComponent = styled.div`
       font-size: 2vw;
     }
   }
+  @media (max-width: 550px) {
+    span {
+      font-size: 4vw;
+      animation: ${Animation} 1.3s linear infinite;
+      :first-child {
+        font-size: 7vw;
+      }
+    }
+  }
 `;
 
 export const Span = styled.span``;
@@ -97,6 +106,7 @@ export const LogoutBox = styled.div`
   }
 `;
 export const MenuButton = styled.span`
+  font-size: 1vw;
   :hover {
     color: ${(props) => props.theme.hoverHeaderFontColor};
   }
@@ -178,15 +188,16 @@ export const MainRightContainer = styled.div`
   height: 100%;
 `;
 export const MainRightContainerTitle = styled.span`
-  margin-top: 1vw;
   width: 80%;
   height: 10%;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.8vw;
   color: ${(props) => props.theme.fontColor};
   @media (max-width: 550px) {
-    font-size: 7vw;
-    margin-top: 2vw;
+    margin-top: 5vw;
+    font-size: 5vw;
   }
 `;
 export const BoardWrapper = styled.div`
@@ -229,8 +240,6 @@ export const BoardRow = styled.div`
         props.isTitle ? "inherit" : props.theme.hoverFontColor};
     }
   }
-  @media (max-width: 550px) {
-  }
 `;
 export const BoardCell = styled.div`
   width: 100%;
@@ -261,6 +270,61 @@ export const BoardCell = styled.div`
     font-size: 3vw;
   }
 `;
+
+export const ProfileBoardRow = styled.div`
+  width: 95%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: ${(props) => (props.isTitle ? "inherit" : "pointer")};
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  :last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  :hover {
+    background-color: ${(props) =>
+      props.isTitle ? "inherit" : props.theme.lightHeaderColor};
+    color: ${(props) => (props.isTitle ? "inherit" : "#fff")};
+  }
+`;
+export const ProfileBoardCell = styled.div`
+  width: 100%;
+  height: 3vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2vw;
+  font-weight: 600;
+  color: ${(props) => props.theme.fontColor};
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  :first-child {
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    flex: 1;
+  }
+  :nth-child(2) {
+    flex: 3;
+  }
+  :nth-child(3) {
+    flex: 2;
+  }
+  :last-child {
+    flex: 2;
+  }
+  @media (max-width: 550px) {
+    height: 10vw;
+  }
+`;
+
+export const EmptyContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 export const CurrentTitleContainer = styled.div`
   width: 80%;
   height: 10%;
@@ -270,6 +334,9 @@ export const CurrentTitleContainer = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.whiteBgColor};
   color: ${(props) => props.theme.fontColor};
+  @media (max-width: 550px) {
+    font-size: 5vw;
+  }
 `;
 export const CurrentTitleContainerEdit = styled.input`
   width: 80%;
@@ -281,6 +348,9 @@ export const CurrentTitleContainerEdit = styled.input`
   justify-content: flex-start;
   background-color: ${(props) => props.theme.whiteBgColor};
   color: ${(props) => props.theme.fontColor};
+  @media (max-width: 550px) {
+    font-size: 5vw;
+  }
 `;
 export const CurrentContentContainer = styled.div`
   width: 80%;
@@ -292,6 +362,9 @@ export const CurrentContentContainer = styled.div`
   align-items: flex-start;
   background-color: ${(props) => props.theme.whiteBgColor};
   color: ${(props) => props.theme.fontColor};
+  @media (max-width: 550px) {
+    font-size: 5vw;
+  }
 `;
 export const CurrentContentContainerEdit = styled.textarea`
   width: 80%;
@@ -304,6 +377,9 @@ export const CurrentContentContainerEdit = styled.textarea`
   align-items: flex-start;
   background-color: ${(props) => props.theme.whiteBgColor};
   color: ${(props) => props.theme.fontColor};
+  @media (max-width: 550px) {
+    font-size: 5vw;
+  }
 `;
 export const ButtonBox = styled.div`
   display: flex;
@@ -335,13 +411,17 @@ export const ButtonContainer = styled.div`
 
 export const ProfileContainer = styled.div`
   width: 100%;
-  height: 80%;
+  height: 90%;
   background-color: ${(props) => props.theme.whiteBgColor};
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border: 4px solid ${(props) => props.theme.lightHeaderColor};
+  @media (max-width: 550px) {
+    justify-content: center;
+    height: 50%;
+  }
 `;
 
 export const Profile = styled.img`
@@ -349,6 +429,10 @@ export const Profile = styled.img`
   height: 10vw;
   border-radius: 50%;
   margin: 2vw 0;
+  @media (max-width: 550px) {
+    width: 24vw;
+    height: 24vw;
+  }
 `;
 export const ProfileLeftContainer = styled.div`
   flex: 2;
@@ -360,6 +444,11 @@ export const ProfileLeftContainer = styled.div`
   align-items: center;
   margin-right: 0.1vw;
   padding-top: 3vw;
+  font-size: 3vw;
+  @media (max-width: 550px) {
+    font-size: 3vw;
+    justify-content: center;
+  }
 `;
 export const ProfileRightContainer = styled.div`
   flex: 5;
@@ -378,20 +467,18 @@ export const ProfileRightContainerSpan = styled.div`
   color: ${(props) => props.theme.headerFontColor};
 `;
 
-export const EmptyContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 export const WordCount = styled.span`
   font-size: 1vw;
   font-weight: 600;
   position: absolute;
-  bottom: ${(props) => props.bottom};
-  right: ${(props) => props.right};
+  bottom: ${(props) => `${props.bottom}vw`};
+  right: ${(props) => `${props.right}vw`};
+  color: ${(props) => props.theme.fontColor};
+  @media (max-width: 550px) {
+    bottom: ${(props) => `${props.mobileBottom}vw`};
+    right: ${(props) => `${props.mobileRight}vw`};
+    font-size: 3vw;
+  }
 `;
 export const AddPostButton = styled.div`
   position: absolute;
@@ -415,6 +502,13 @@ export const AddPostButton = styled.div`
     color: ${(props) => props.theme.hoverFontColor};
   }
   cursor: pointer;
+  @media (max-width: 550px) {
+    width: 10vw;
+    height: 10vw;
+    top: 5vw;
+    font-size: 8vw;
+    padding-bottom: 2%;
+  }
 `;
 
 export const GoToBackButton = styled.div`
@@ -484,6 +578,9 @@ export const AuthInputTitle = styled.div`
   height: 100%;
   font-size: 1.2vw;
   color: ${(props) => props.theme.fontColor};
+  @media (max-width: 550px) {
+    font-size: 3.2vw;
+  }
 `;
 export const AuthInput = styled.input`
   flex: 3;
@@ -506,7 +603,6 @@ export const FooterWrapper = styled.div`
   background: ${(props) => props.theme.lightHeaderColor};
   color: #fff;
   @media (max-width: 550px) {
-    font-size: 1.2vw;
     height: 5%;
   }
 `;
@@ -521,7 +617,7 @@ export const FooterLeft = styled.div`
   height: 100%;
   background: ${(props) => props.theme.headerColor};
   @media (max-width: 550px) {
-    font-size: 1vw;
+    font-size: 2vw;
   }
 `;
 export const FooterRight = styled.div`
@@ -534,7 +630,7 @@ export const FooterRight = styled.div`
   height: 100%;
   background: ${(props) => props.theme.headerColor};
   @media (max-width: 550px) {
-    font-size: 1.2vw;
+    font-size: 3vw;
   }
 `;
 

@@ -26,10 +26,10 @@ export const ProfileMode = ({
   const { me } = useContext(isLoggedInContext);
   return (
     <>
-      <MainRightContainerTitle>
-        나의 프로필과 게시글을 확인할 수 있어요
-      </MainRightContainerTitle>
       <BoardWrapper>
+        <MainRightContainerTitle>
+          나의 프로필과 게시글을 확인할 수 있어요
+        </MainRightContainerTitle>
         <ProfileContainer>
           <ProfileLeftContainer>
             <Profile src={Profile_img} />

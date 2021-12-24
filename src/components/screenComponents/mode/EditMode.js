@@ -38,7 +38,12 @@ export const EditMode = ({
             }
           }}
         />
-        <WordCount bottom={"29.5vw"} right={"16vw"}>
+        <WordCount
+          mobileBottom={112.5}
+          mobileRight={14}
+          bottom={28.5}
+          right={16}
+        >
           {titleInput.value.length} / 30
         </WordCount>
         <CurrentContentContainerEdit
@@ -53,7 +58,7 @@ export const EditMode = ({
             }
           }}
         />
-        <WordCount bottom={"8vw"} right={"16vw"}>
+        <WordCount mobileBottom={25} mobileRight={14} bottom={8} right={16}>
           {contentInput.value.length} / 1000
         </WordCount>
         <ButtonBox>
