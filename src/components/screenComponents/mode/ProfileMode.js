@@ -23,7 +23,7 @@ export const ProfileMode = ({
   isLoggedIn,
   setMode,
 }) => {
-  const { me } = useContext(isLoggedInContext);
+  const { me, setIsLoggedIn } = useContext(isLoggedInContext);
   return (
     <>
       <BoardWrapper>
@@ -51,9 +51,22 @@ export const ProfileMode = ({
         </ProfileContainer>
         <ButtonBox>
           {isLoggedIn && (
-            <ButtonContainer onClick={() => setMode(MAIN)}>
-              뒤로가기
-            </ButtonContainer>
+            <>
+              <ButtonContainer
+                isMobile={true}
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  setIsLoggedIn(false);
+                  alert("로그아웃 되었습니다.");
+                  window.location.href = "/";
+                }}
+              >
+                로그아웃
+              </ButtonContainer>
+              <ButtonContainer onClick={() => setMode(MAIN)}>
+                뒤로가기
+              </ButtonContainer>
+            </>
           )}
         </ButtonBox>
       </BoardWrapper>

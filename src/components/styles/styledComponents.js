@@ -511,7 +511,6 @@ export const AddPostButton = styled.div`
     height: 10vw;
     top: 5vw;
     font-size: 8vw;
-    padding-bottom: 10px;
   }
 `;
 
@@ -539,7 +538,7 @@ export const GoToBackButton = styled.div`
     right: 2vw;
     width: 10vw;
     height: 10vw;
-    font-size: 3vw;
+    font-size: 2.2vw;
   }
 `;
 export const PageSpan = styled.span`
