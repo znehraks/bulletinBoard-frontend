@@ -53,18 +53,6 @@ export const CreateMode = ({
           ref={contentRef}
           placeholder="내용을 입력하세요"
           {...contentInput}
-          onKeyPress={(e) => {
-            if (e.key === "Enter") {
-              createFunc(
-                me.code,
-                me.user_id,
-                titleInput.value,
-                contentInput.value,
-                titleRef,
-                contentRef
-              );
-            }
-          }}
         />
         <WordCount mobileBottom={25} mobileRight={14} bottom={8} right={16}>
           {contentInput.value.length} / 1000

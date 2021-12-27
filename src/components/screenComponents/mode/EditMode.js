@@ -8,7 +8,7 @@ import {
   ButtonContainer,
   WordCount,
 } from "../../styles/styledComponents";
-import { DETAIL, MAIN } from "../Enum";
+import { DETAIL } from "../Enum";
 import PropTypes from "prop-types";
 export const EditMode = ({
   titleInput,
@@ -51,17 +51,6 @@ export const EditMode = ({
           type="textarea"
           placeholder="내용을 입력하세요"
           {...contentInput}
-          onKeyPress={(e) => {
-            if (e.key === "Enter") {
-              editFunc(
-                current.code,
-                titleInput.value,
-                contentInput.value,
-                titleRef,
-                contentRef
-              );
-            }
-          }}
         />
         <WordCount mobileBottom={25} mobileRight={14} bottom={8} right={16}>
           {contentInput.value.length} / 1000
