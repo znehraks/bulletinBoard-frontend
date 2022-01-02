@@ -41,7 +41,6 @@ export const MainMode = ({
           data[i].board_author.includes(search.value) ||
           data[i].board_title.includes(search.value)
         ) {
-          console.log(data[i]);
           searchedDataTemp.push(data[i]);
         }
       }
@@ -102,7 +101,7 @@ export const MainMode = ({
         <ButtonContainer
           margin={"0vw 2vw 1vw 2vw"}
           onClick={() =>
-            page < Math.ceil(data.length / 8)
+            page < Math.ceil(searchedData.length / 8)
               ? setPage(page + 1)
               : alert("마지막 페이지 입니다.")
           }

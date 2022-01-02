@@ -44,6 +44,7 @@ export const RightContainer = ({
           data={data}
           setData={setData}
           setCurrent={setCurrent}
+          setMode={setMode}
         />
       )}
       {mode === DETAIL && (
