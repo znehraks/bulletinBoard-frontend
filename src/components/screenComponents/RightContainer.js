@@ -10,6 +10,7 @@ import { SignupMode } from "./mode/SignupMode";
 import PropTypes from "prop-types";
 export const RightContainer = ({
   data,
+  setData,
   page,
   setPage,
   setCurrent,
@@ -36,12 +37,12 @@ export const RightContainer = ({
       {mode === MAIN && (
         <MainMode
           isLoggedIn={isLoggedIn}
-          setMode={setMode}
           titleInput={titleInput}
           contentInput={contentInput}
           setPage={setPage}
           page={page}
           data={data}
+          setData={setData}
           setCurrent={setCurrent}
         />
       )}

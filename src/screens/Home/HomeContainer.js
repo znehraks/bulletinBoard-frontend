@@ -267,7 +267,6 @@ const HomeContainer = () => {
       current={current}
       setCurrent={setCurrent}
       setIsLoggedIn={setIsLoggedIn}
-      setData={setData}
       setMe={setMe}
       prevMode={prevMode}
       setPrevMode={setPrevMode}

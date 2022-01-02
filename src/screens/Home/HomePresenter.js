@@ -10,6 +10,7 @@ import {
   Wrapper,
 } from "../../components/styles/styledComponents";
 import Loader from "../../components/screenComponents/Loader";
+
 export const HomePresenter = ({
   loading,
   isLoggedIn,
@@ -22,6 +23,7 @@ export const HomePresenter = ({
   idInput,
   passwordInput,
   data,
+  setData,
   me,
   mode,
   userData,

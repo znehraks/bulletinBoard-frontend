@@ -676,3 +676,27 @@ export const PopupMessageBox = styled.div`
     font-size: 3vw;
   }
 `;
+
+export const SearchInputContainer = styled.div`
+  width: 30%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2vw;
+`;
+export const SearchInput = styled.input`
+  width: 80%;
+  height: 60%;
+  outline: none;
+  font-size: 1.4vw;
+  background: inherit;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+`;
+export const SearchIcon = styled.img`
+  height: 60%;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+`;

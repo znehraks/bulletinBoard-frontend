@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   MainRightContainerTitle,
   BoardWrapper,
@@ -8,11 +8,16 @@ import {
   ButtonContainer,
   AddPostButton,
   PageSpan,
+  SearchInputContainer,
+  SearchInput,
+  SearchIcon,
 } from "../../styles/styledComponents";
 import { BoardTable } from "../BoardTable";
 import { CREATE, DETAIL } from "../Enum";
 import PropTypes from "prop-types";
 import { isLoggedInContext } from "../Context";
+import useInput from "../../hooks/useInput";
+import Magnifier_img from "../../styles/images/magnifier.png";
 
 export const MainMode = ({
   isLoggedIn,
@@ -25,8 +30,37 @@ export const MainMode = ({
   setCurrent,
 }) => {
   const { me } = useContext(isLoggedInContext);
+  const search = useInput("");
+  const [searchedData, setSearchedData] = useState([]);
+  const searchFunc = () => {
+    const searchedDataTemp = [];
+    if (data.length !== 0) {
+      for (let i = 0; i < data.length; i++) {
+        if (
+          search.value === "" ||
+          data[i].board_author.includes(search.value) ||
+          data[i].board_title.includes(search.value)
+        ) {
+          console.log(data[i]);
+          searchedDataTemp.push(data[i]);
+        }
+      }
+      setSearchedData(searchedDataTemp);
+    }
+  };
+  useEffect(() => {
+    searchFunc();
+  }, [search.value]);
   return (
     <>
+      <SearchInputContainer>
+        <SearchInput
+          type="text"
+          placeholder="검색어를 입력하세요."
+          {...search}
+        />
+        <SearchIcon src={Magnifier_img} alt="검색" />
+      </SearchInputContainer>
       {isLoggedIn && me && (
         <AddPostButton
           onClick={() => {
@@ -47,7 +81,7 @@ export const MainMode = ({
           <BoardCell>작성 시간</BoardCell>
         </BoardRow>
         <BoardTable
-          data={data}
+          data={searchedData}
           me={me}
           page={page}
           setCurrent={setCurrent}
